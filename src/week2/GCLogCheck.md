@@ -1,25 +1,25 @@
 Analysis:
 
 serial：
-年轻代叫def new，年老代叫tenured，
-512m时发生了10多次GC，有3-4次是年老代，每次大概30ms多，还有一次Full GC 
-2g时发生了5次GC，都是年轻代，每次大概85ms左右
+年轻代叫def new，年老代叫tenured; 
+512m时发生了10多次GC，有3-4次是年老代，每次大概30ms多，还有一次Full GC; 
+2g时发生了5次GC，都是年轻代，每次大概85ms左右.
 
 Parallel：
-年轻代叫PSYoungGen，年老代叫ParOldGen，
-512m时发生了30多次GC，有3-4次是年老代，从10ms到30ms多，还有多次Full GC 
-2g时发生了6次GC，都是年轻代，从35ms 到74ms，第一次最长。
+年轻代叫PSYoungGen，年老代叫ParOldGen; 
+512m时发生了30多次GC，有3-4次是年老代，从10ms到30ms多，还有多次Full GC; 
+2g时发生了6次GC，都是年轻代，从35ms 到74ms，第一次最长.
 
 CMS：
-年轻代叫par new generation，年老代叫concurrent mark-sweep generation，
-512m时发生了10多次GC，都是年轻代，从6ms到30ms多，没有Full GC 
-2g时发生了5次GC，都是年轻代，从50ms 到80ms多。
+年轻代叫par new generation，年老代叫concurrent mark-sweep generation; 
+512m时发生了10多次GC，都是年轻代，从6ms到30ms多，没有Full GC; 
+2g时发生了5次GC，都是年轻代，从50ms 到80ms多.
 
 G1：
-512m时，相比其他GC，发生了最多GC，但大都是几ms，Full GC也小于30ms 
-2g时发生了7次GC，都是年轻代，都小于10ms。
+512m时，相比其他GC，发生了最多GC，但大都是几ms，Full GC也小于30ms; 
+2g时发生了7次GC，都是年轻代，都小于10ms.
 
-总体来说，512m到2g增加内存后，GC发生频率降低（但是每次GC的耗时有增加），总耗时会降低。
+总体来说，512m到2g增加内存后，GC发生频率降低（但是每次GC的耗时有增加），总耗时会降低.
 
 
 
