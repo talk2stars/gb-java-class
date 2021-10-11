@@ -1,1 +1,6 @@
-This is for Week3 HW.
+# netty-gateway
+
+```
+Week3 HW 
+
+```
