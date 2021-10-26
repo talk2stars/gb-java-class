@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.2.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="animal" class="model.Animal">
+        <property name="id" value="0"/>
+        <property name="name" value="animal"/>
+    </bean>
+
+    <bean id="human" class="model.Human">
+        <property name="id" value="1"/>
+        <property name="name" value="human"/>
+    </bean>
+
+    <bean id="aopAct" class="aop.AopAct"/>
+
+    <aop:config>
+        <aop:pointcut expression="execution(* model.Animal.act(..))" id="p1" /> <!--切点-->
+        <aop:aspect ref="aopAct"> <!--切面 -->
+            <aop:around method="check" pointcut-ref="p1" />
+        </aop:aspect>
+    </aop:config>
+</beans>
